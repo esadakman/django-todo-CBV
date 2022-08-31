@@ -47,16 +47,16 @@
                   <td>{{forloop.counter}}</td>
                   <td>{{todo.title}}</td>
                   {% if todo.is_done == True%}
-                  <td>
+                  <td class="d-flex justify-content-center">
                     <a href="{% url 'done' todo.id %}">✅</a>
                   </td>
                   {% elif todo.is_done == False %}
-                  <td>
-                    <a href="{% url 'done' todo.id %}"> 💤 </a>
+                  <td class="d-flex justify-content-center">
+                    <a href="{% url 'done' todo.id %}" class="d-flex justify-content-center"> 💤 </a>
                   </td>
                   {%endif%}
 
-                  <td>
+                  <td >
                     {% if todo.priority == '1'%}
                         1️⃣
                     {%elif todo.priority == '2'%}
@@ -67,16 +67,16 @@
                         4️⃣
                     {%elif todo.priority == '5'%}
                         5️⃣
-                    {%endif%}
+                    {%endif%} 
                 </td>
 
-                  <td>
-                    <a href="{% url 'delete' todo.id %}" title="Delete" class=""
+                  <td class="d-flex justify-content-center">
+                    <a href="{% url 'delete' todo.id %}" title="Delete" class="d-flex justify-content-center"
                       >🗑️</a
                     >
                   </td>
-                  <td>
-                    <a href="{% url 'update' todo.id %}" class="">⚙️</a>
+                  <td >
+                    <a href="{% url 'update' todo.id %}" class="d-flex justify-content-center">⚙️</a>
                   </td>
                 </tr>
 
