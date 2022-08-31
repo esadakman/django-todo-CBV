@@ -1,11 +1,9 @@
-{% extends 'todo/base.html' %}
-
-
-{% block content %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="ADD">
-    </form>
+{% extends 'todo/base.html' %} {% block content %}
+<form action="" method="POST">
+  {% csrf_token %} {{form.first_name|as_crispy_field}}
+  {{form.description|as_crispy_field}} {{form.is_done|as_crispy_field}}
+  {{form.priority|as_crispy_field}} {{form.created_date|as_crispy_field}}
+  {{form.updated_date|as_crispy_field}} {{form.as_p}}
+  <input type="submit" value="ADD" />
+</form>
 {% endblock content %}
-    
