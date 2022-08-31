@@ -2,7 +2,7 @@
     background-color: cadetblue;
 }
 
-.container{
+.container {
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
@@ -18,9 +18,10 @@
     height: 30%;
     text-align: center;
 }
+
 #success {
-    background-color: darkseagreen ;
-    color:rgb(231, 200, 158);
+    background-color: darkseagreen;
+    color: rgb(231, 200, 158);
     margin: auto;
     width: 40%;
     height: 30%;
@@ -33,4 +34,8 @@ body {
     background-repeat: no-repeat;
 }
 
-textarea { max-width: 100% }
+
+
+textarea {
+    max-width: 100%
+}

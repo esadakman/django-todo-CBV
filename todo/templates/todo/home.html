@@ -19,7 +19,7 @@
       <div class="col">
         <div class="border">
           {% if todos|length == 0 %}
-          <div class="p-4">
+          <div class="p-1" style="min-height: 30rem">
             <br />
             <br />
             <div class="alert alert-danger text-center">
@@ -57,11 +57,18 @@
                   {%endif%}
 
                   <td>
-                    {% if todo.priority == '1'%} 1️⃣ {%elif todo.priority ==
-                    '2'%} 2️⃣ {%elif todo.priority == '3'%} 3️⃣ {%elif
-                    todo.priority == '4'%} 4️⃣ {%elif todo.priority == '5'%} 5️⃣
+                    {% if todo.priority == '1'%}
+                        1️⃣
+                    {%elif todo.priority == '2'%}
+                        2️⃣
+                    {%elif todo.priority == '3'%}
+                        3️⃣
+                    {%elif todo.priority == '4'%}
+                        4️⃣
+                    {%elif todo.priority == '5'%}
+                        5️⃣
                     {%endif%}
-                  </td>
+                </td>
 
                   <td>
                     <a href="{% url 'delete' todo.id %}" title="Delete" class=""
