@@ -1,36 +1,38 @@
-{% extends 'todo/base.html' %} {% block title %} Home {% endblock title %}
+{% extends 'todo/base.html' %} 
+{% load crispy_forms_tags %}
+{% block title %} Home {% endblock title %}
 {%block content %}
 <div>
   <div class="container pt-4">
     <div class="row mt-2 p-0">
-      <div class="col-sm-6 mx-auto p-0 shadow">
-        <div class="alert alert-warning text-center">
-          <h2>Add ToDo</h2>
-        </div>
-        <div class="p-4">
-          <form action="/add/" method="POST">
-            {% csrf_token%} {{form.as_p}}
-            <hr />
-            <input type="submit" value="ADD" class="btn btn-success" />
-          </form>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="border">
-          {% if todos|length == 0 %}
-          <div class="p-1" style="min-height: 30rem">
-            <br />
-            <br />
-            <div class="alert alert-danger text-center">
-              <p class="" style="font-size: 30px">ToDo Lists</p>
+        <div class="col-lg-6  p-0  mb-4 ">
+            <div class="alert alert-warning text-center">
+                <h2>Add Todo</h2>
             </div>
-            <br />
-            <br />
-          </div>
-          {%else%}
-          <div class="p-2">
-            <table class="table table-hover">
+            <div class="p-4 bg-light rounded">
+                <form action="/add/" method="POST">
+                    {% csrf_token%} {{form | crispy}}
+                    <hr>
+                    <div class=" d-flex align-items-center mt-3 justify-content-center ">
+                    <input type="submit" value="ADD" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class=" ">
+              {% if todos|length == 0 %}
+              <div class="py-2 ms-2" style="min-width: 500px;">
+                  <br> 
+                  <div class="alert alert-danger text-center">
+                      <p class="" style="font-size: 30px;">ToDo Lists</p>
+                  </div>
+                   
+              </div>
+              {%else%}
+              <div class="p-2 bg-light rounded" style="min-width: 500px;">
+                <table class="table table-hover">
               <thead>
                 <tr>
                   <th>No</th>
@@ -83,8 +85,8 @@
                 {% endfor %}
               </tbody>
             </table>
+            <p class="text-center">Tamamlanan todoların sayısı {{done_count}} / {{todos | length}}</p>
           </div>
-          <p>Tamamlanan todoların sayısı {{done_count}} / {{todos | length}}</p>
           {%endif%}
         </div>
       </div>
