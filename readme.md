@@ -2,19 +2,7 @@
 
 <h1 align="center">Todo App</h1>
 
-<div align="center">
-  <h3>
-    <a href="http://esadd.pythonanywhere.com/">
-      Demo
-    </a>
-     | 
-    <a href="https://github.com/esadakman/todoApp_ClassBasedViews">
-      Project
-    </a>
- 
-  </h3>
-</div>
-
+  
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
@@ -29,6 +17,8 @@
 <!-- OVERVIEW -->
 
 ## Overview
+
+- Apart from my previous todo app, i use class based views
 
 ![todo](https://user-images.githubusercontent.com/98649983/188873857-358ee6a4-3bb1-4667-906d-23f828efdafe.gif)
 
@@ -51,7 +41,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com)
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/esadakman/todoApp_ClassBasedViews.git
+$ git clone https://github.com/esadakman/django-todo-CBV
 
 # Install dependencies
     $ python -m venv env
